@@ -25,8 +25,6 @@ function Navbar() {
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMenu}>Home</Link>
             </li>
-            <li className='nav-item'><Link to='/movie' className='nav-links' onClick={closeMenu}>Movie</Link>
-            </li>
             <li className='nav-item'><Link to='/coming' className='nav-links' onClick={closeMenu}>Coming soon</Link>
             </li>
             <li className='search-item'><input placeholder="Search" /></li>
