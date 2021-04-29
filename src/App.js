@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 import './App.css';
+=======
+import React from 'react';
+import Routes from './Routes'
+import './App.css'
+>>>>>>> 6f11b0eecd409bfeea145b95d28502984046dddc
 
-function App() {
+const App = () => {
   return (
+<<<<<<< HEAD
     <div className="App">
       <header className="App-header">
         <p>
@@ -16,8 +23,12 @@ function App() {
           Learn React
         </a>
       </header>
+=======
+    <div>
+      <Routes />
+>>>>>>> 6f11b0eecd409bfeea145b95d28502984046dddc
     </div>
   );
-}
+};
 
 export default App;
