@@ -25,12 +25,10 @@ function Navbar() {
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMenu}>Home</Link>
             </li>
-            <li className='nav-item'><Link to='/movie' className='nav-links' onClick={closeMenu}>Movie</Link>
-            </li>
             <li className='nav-item'><Link to='/coming' className='nav-links' onClick={closeMenu}>Coming soon</Link>
             </li>
             <li className='search-item'><input placeholder="Search" /></li>
-            <li className='nav-item'><Link to='/' className='nav-links' onClick={closeMenu}><i class="fas fa-shopping-cart"></i></Link>
+            <li className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i class="fas fa-shopping-cart"></i></Link>
             </li>
             <li>
               <Link 
