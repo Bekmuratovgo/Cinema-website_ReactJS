@@ -9,10 +9,9 @@ const Routes = () => {
         <BrowserRouter>
             <Navbar />
             <Switch>
+                <h1>asd</h1>
                 <Route exact path="/" component={Home}  />
-                {/* <Route exact path="/" component={} />
-                <Route exact path="/" component={}/>
-                <Route exact path="/" component={} /> */}
+                
 
             </Switch>
             
