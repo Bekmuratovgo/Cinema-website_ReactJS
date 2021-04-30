@@ -23,6 +23,7 @@ const Routes = () => {
         <BrowserRouter>
             <Navbar />     
             <Switch>
+                <h1>asd</h1>
                 <Route exact path="/" component={Home}  />
                 <Route exact path="/admin" component={Admin}/>
                 <Route exact path="/list" component={TodoList}/>
