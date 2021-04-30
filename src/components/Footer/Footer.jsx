@@ -46,9 +46,9 @@ const Footer = () => {
                     </div>
                     <div className="footer-link-items">
                         <h2>Contact Us</h2>
-                        <Link to="/"><i class="fas fa-map-marker-alt"> Switzerland 87 </i></Link>
-                        <Link to="/" ><i class="far fa-envelope"></i> movie@movie.com </Link>
-                        <Link to="/" ><i class="fas fa-phone"></i> 0 555 555 777</Link>
+                        <Link to="/"><i className="fas fa-map-marker-alt"> Switzerland 87 </i></Link>
+                        <Link to="/" ><i className="far fa-envelope"></i> movie@movie.com </Link>
+                        <Link to="/" ><i className="fas fa-phone"></i> 0 555 555 777</Link>
                         {/* <Link to="/" >Sponsorships</Link> */}
                     </div>
                 </div>
@@ -58,7 +58,7 @@ const Footer = () => {
                     <div className="footer-logo">
                         <Link to="/" className="social-logo">
                         M
-                        <i class="fas fa-compact-disc"></i>
+                        <i className="fas fa-compact-disc"></i>
                         VIE
                         </Link>
                     </div>
