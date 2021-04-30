@@ -41,7 +41,7 @@ function Navbar() {
                 Sign Up
                 
               </Link>
-            </li>   
+            </li>  
           </ul>
         </div>
       </nav>
