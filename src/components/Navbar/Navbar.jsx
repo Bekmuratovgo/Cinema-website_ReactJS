@@ -14,7 +14,7 @@ function Navbar() {
         <div className='navbar-container'>
           <Link to='/' className='navbar-logo'>
             M
-            <i class="fas fa-compact-disc"></i>
+            <i className="fas fa-compact-disc"></i>
             VIE
           </Link>
           <div className='menu-icon' onClick={handleClick}>
@@ -24,10 +24,10 @@ function Navbar() {
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMenu}>Home</Link>
             </li>
-            <li className='nav-item'><Link to='/coming' className='nav-links' onClick={closeMenu}>Coming soon</Link>
+            <li className='nav-item'><Link to='/movies' className='nav-links' onClick={closeMenu}>Movies</Link>
             </li>
             <li className='search-item'><input placeholder="Search" /></li>
-            <li className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i class="fas fa-shopping-cart"></i></Link>
+            <li className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i className="fas fa-shopping-cart"></i></Link>
             </li>
              <li>
                   <Link
