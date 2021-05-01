@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { topicContext } from '../../context/TopicContext';
+import '../AddTopics/AddTopics.css'
 
 const AddTopics = () => {
     const [topic, setTopic] = useState({
@@ -33,13 +34,13 @@ const AddTopics = () => {
             // secondDescription: '',
         })
     }
-
+    
     return (
         <div className="inps">
             <input className="inp-add" value={topic.title} name="title" onChange={handleValues} type="text" placeholder="Заголовок"/>
             <input className="inp-add" value={topic.description} name="description" onChange={handleValues} type="text" placeholder="Описание"/>
             <input className="inp-add" value={topic.img} name="img" onChange={handleValues} type="text" placeholder="Изображение"/>
-            <input className="inp-add" value={topic.secondImg} name="secondImg" onChange={handleValues} type="text" placeholder="Второе изображение"/>
+            {/* <input className="inp-add" value={topic.secondImg} name="secondImg" onChange={handleValues} type="text" placeholder="Второе изображение"/> */}
             {/* <input className="inp-add" value={topic.subTitle} name="subTitle" onChange={handleValues} type="text" placeholder="Подзаголовок"/>
         <input className="inp-add" value={topic.secondImg} name="secondImg" onChange={handleValues} type="text" placeholder="Второе изображение"/> */}
             {/* <input className="inp-add" value={topic.secondDescription} name="secondDescription" onChange={handleValues} type="text" placeholder="Второе описание"/> */}

@@ -8,5 +8,8 @@
 .list{
     background: url('https://screenvisionmedia.com/wp-content/uploads/2015/09/movie-bg.jpg');
     display: flow-root;
-    margin: -3px;
+    /* margin: -44px; */
+    margin-top: -44px;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }

@@ -6,7 +6,7 @@ export const topicContext = React.createContext();
 const INIT_STATE = {
     topicsData: [],
     topicDetails: null,
-    // searchData: []
+    searchData: []
 }
 
 const reducer = (state=INIT_STATE, action) =>{
@@ -15,8 +15,8 @@ const reducer = (state=INIT_STATE, action) =>{
             return {...state, topicsData: action.payload }
         case "GET_TOPIC_DETAILS":
             return{...state, topicDetails: action.payload}
-        // case "SEARCH":
-        //     return {...state, searchData: action.payload}
+        case "SEARCH":
+            return {...state, searchData: action.payload}
         default: return state
     }
 }
@@ -24,8 +24,10 @@ const reducer = (state=INIT_STATE, action) =>{
 const TopicContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
 
-    function postNewTopic(topic){
+    async function postNewTopic(topic){
         axios.post('http://localhost:8000/topics' , topic)
+
+        await getTopics()
     }
 
     async function getTopics(){
@@ -37,8 +39,7 @@ const TopicContextProvider = ({ children }) => {
         })
     }
 
-    async function getTopicDetails(id
-        ){
+    async function getTopicDetails(id){
         let { data } = await axios.get(`http://localhost:8000/topics/${id}`)
         dispatch({
             type: "GET_TOPIC_DETAILS",
@@ -51,29 +52,31 @@ const TopicContextProvider = ({ children }) => {
         getTopicDetails(id)
     }
 
-    // async function search(value){
-    //    let { data } =  await axios.get(`http://localhost:8000/topics?q=${value}`)
-    //    dispatch({
-    //        type: 'SEARCH',
-    //        payload: data
-    //    })
-    // }   
+    async function search(value){
+       let { data } =  await axios.get(`http://localhost:8000/topics?q=${value}`)
+       dispatch({
+           type: 'SEARCH',
+           payload: data
+       })
+    }   
 
-    const deleteTask = async(id) => {
+    async function  deleteTask(id){
+        // console.log(id );
         await axios.delete(`http://localhost:8000/topics/${id}`)
-        // getTodosData()
-     }
+
+    }
+    // getTopics()
 
     return (
         <topicContext.Provider value={{
-            // searchData: state.searchData,
+            searchData: state.searchData,
             topicsData: state.topicsData,
             topicDetails: state.topicDetails,
             getTopicDetails,
             postNewTopic ,
             getTopics,
             saveTopic,
-            // search,
+            search,
             deleteTask
         }}>
             {children} 
