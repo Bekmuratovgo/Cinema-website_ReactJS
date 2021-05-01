@@ -18,6 +18,7 @@ const TopicList = () => {
             <>
                 {topicsData.map((item) =>(
                 <TopicCard key={item.id} item={item} />
+                
             ))}
             </>
         </div>

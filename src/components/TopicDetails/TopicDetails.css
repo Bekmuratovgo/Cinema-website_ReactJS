@@ -191,8 +191,8 @@ img {
 }
 .movie_card{
   padding: 0 !important;
-  width: 22rem;
-  height: 600px;
+  width: 18rem;
+  height: 500px;
   margin:14px; 
   /* background: linear-gradient( 
     90deg
@@ -204,16 +204,17 @@ img {
 .movie_card img{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 26rem;
-  width: 352px;
+  height: 21rem;
+  width: 288px;
 }
 .movie_info{ 
   color: #5e5c5c;
 }
 
 .card-body{
-  height: 160px;
+  /* height: 160px; */
   margin: 7px;
+  /* margin-top: -40px; */
 }
 
 .movie_info i{
@@ -226,7 +227,6 @@ img {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  float: right;
   right: 15px;
   bottom: 42px;
   font-size: 27px;
@@ -254,14 +254,17 @@ img {
   color: #8e24aa;
 }
 .card-title{
-  font-size: 27px;
+  font-size: 25px;
   /* font-family: "Montserrat"; */
   font-weight: 500;
-  width: 80%;
+  /* width: 80%; */
   height: 4rem;
   text-overflow: ellipsis;
   overflow: hidden;
   color: black;
+}
+.card-body>.play_button{
+  float: right;
 }
 
 .card-desc{
