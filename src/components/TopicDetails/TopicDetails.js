@@ -62,13 +62,13 @@ const TopicDetails = (props) => {
                             <>
                                 <div class="card movie_card">
                                     <img src={topicDetails.img} class="card-img-top" alt="..."/>
-                                    <div class="card-body">
-                                        <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                                    <div className="card-body">
+                                        <i className="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
                                         </i>
-                                        <h1 class="card-title">{topicDetails.title}</h1>
+                                        <h1 className="card-title">{topicDetails.title}</h1>
                                         <p className="card-title" style={{fontSize:"18px"}}>{topicDetails.description}</p>
-                                        <span class="movie_info">2019</span>
-                                        <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+                                        <span className="movie_info">2019</span>
+                                        <span className="movie_info float-right"><i className="fas fa-star"></i> 9 / 10</span>
                                     </div>
                                 </div>
 {/* 
