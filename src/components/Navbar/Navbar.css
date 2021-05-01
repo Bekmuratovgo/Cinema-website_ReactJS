@@ -44,7 +44,7 @@
     grid-gap: 15px;
     list-style: none;
     text-align: center;
-    width: 70vw;
+    width: 80vw;
     justify-content: end;
     margin-right: 3rem;
     margin-top: 0rem;
@@ -56,6 +56,8 @@
 .search-item input {
     border-radius: 10px;
     margin-top: 29px;
+    width: 170px;
+    height: 26px;
 }
 
 .nav-links {
@@ -144,3 +146,23 @@
         font-size: 2rem;
     }
 }
+
+/* SEARCH LIVE */
+.search-result{
+    /* width: 100%; */
+    position: absolute;
+    background-color: white;;
+    z-index: 10;
+    margin-left: 10px;
+ }
+ .search-item{
+    position: relative;
+ }
+ .search-result div{
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+ }
+ .search-result a{
+    text-decoration: none;
+    color: black;
+ }

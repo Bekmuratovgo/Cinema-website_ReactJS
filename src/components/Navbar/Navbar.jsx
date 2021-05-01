@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { topicContext } from "../../context/TopicContext";
 import "./Navbar.css";
 
 function Navbar() {
@@ -8,12 +9,23 @@ function Navbar() {
     const handleClick = () => setClick(!click);
     const closeMenu = () => setClick(false);
 
+    const { search, searchData } = useContext(topicContext);
+    const [searchValue, setSearchValue] = useState("");
+
+    const handleValue = (e) => {
+        setSearchValue(e.target.value);
+        search(e.target.value);
+    };
+    useEffect(() => {
+        console.log(searchData);
+    }, [searchData]);
+
     return (
         <>
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
-                        M<i class="fas fa-compact-disc"></i>
+                        M<i className="fas fa-compact-disc"></i>
                         VIE
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
@@ -31,23 +43,33 @@ function Navbar() {
                         </li>
                         <li className="nav-item">
                             <Link
-                                to="/coming"
+                                to="/movies"
                                 className="nav-links"
                                 onClick={closeMenu}
                             >
-                                Coming soon
+                                Movies
                             </Link>
                         </li>
                         <li className="search-item">
-                            <input placeholder="Search" />
+                            <input
+                                placeholder="Search"
+                                onChange={handleValue}
+                            />
+                            <div className="search-result">
+                                {searchData.map((item) => (
+                                    <Link to={`/details/${item.id}`}>
+                                        <div>{item.title}</div>
+                                    </Link>
+                                ))}
+                            </div>
                         </li>
                         <li className="nav-item">
                             <Link
-                                to="/"
+                                to="/cart"
                                 className="nav-links"
                                 onClick={closeMenu}
                             >
-                                <i class="fas fa-shopping-cart"></i>
+                                <i className="fas fa-shopping-cart"></i>
                             </Link>
                         </li>
                         <li>
