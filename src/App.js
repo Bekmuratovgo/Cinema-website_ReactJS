@@ -4,7 +4,8 @@ import './App.css'
 
 const App = () => {
   return (
-    <div>
+    <div className="App"><input type="text" placeholder="Search..." /> 
+    
       <Routes />
     </div>
   );
