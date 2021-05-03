@@ -1,5 +1,10 @@
 import React, { useReducer } from "react";
 import axios from "axios";
+import {
+    calcsubPrice,
+    calcTotalPrice,
+    getCountProductsCart,
+} from "../components/helpers/calcPrice";
 
 export const topicContext = React.createContext();
 
@@ -7,6 +12,9 @@ const INIT_STATE = {
     topicsData: [],
     topicDetails: null,
     searchData: [],
+    paginationPages: 1,
+    cart: {},
+    cartLength: getCountProductsCart(),
 };
 
 const reducer = (state = INIT_STATE, action) => {
@@ -17,6 +25,10 @@ const reducer = (state = INIT_STATE, action) => {
             return { ...state, topicDetails: action.payload };
         case "SEARCH":
             return { ...state, searchData: action.payload };
+        case "CHANGE_CART_COUNT":
+            return { ...state, cartLength: action.payload };
+        case "GET_CART":
+            return { ...state, cart: action.payload };
         default:
             return state;
     }
@@ -69,18 +81,102 @@ const TopicContextProvider = ({ children }) => {
     }
     // getTopics()
 
+    // KORZINA
+    function addProductToCard(product) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
+            cart = {
+                products: [],
+                totalPrice: 0,
+            };
+        }
+        let newProduct = {
+            item: product,
+            count: 1,
+            subPrice: 0,
+        };
+
+        let filteredCart = cart.products.filter(
+            (elem) => elem.item.id === product.id
+        );
+        if (filteredCart.length > 0) {
+            cart.products = cart.products.filter(
+                (elem) => elem.item.id !== product.id
+            );
+        } else {
+            cart.products.push(newProduct);
+        }
+
+        newProduct.subPrice = calcsubPrice(newProduct);
+        cart.totalPrice = calcTotalPrice(cart.products);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        dispatch({
+            type: "CHANGE_CART_COUNT",
+            payload: cart.products.length,
+        });
+        // stopPropagation()
+    }
+
+    function getCart() {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
+            cart = {
+                products: [],
+                totalPrice: 0,
+            };
+        }
+        dispatch({
+            type: "GET_CART",
+            payload: cart,
+        });
+    }
+
+    function changeProductCount(count, id) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        cart.products = cart.products.map((elem) => {
+            if (elem.item.id === id) {
+                elem.count = count;
+                elem.subPrice = calcsubPrice(elem);
+            }
+            return elem;
+        });
+        cart.totalPrice = calcTotalPrice(cart.products);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        getCart();
+    }
+
+    function checkProductInCart(id) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
+            cart = {
+                products: [],
+                totalPrice: 0,
+            };
+        }
+        let newCart = cart.products.filter((elem) => elem.item.id === id);
+        return newCart.length > 0 ? true : false;
+    }
+
     return (
         <topicContext.Provider
             value={{
+                topicsData: state.topicsData,
                 searchData: state.searchData,
                 topicsData: state.topicsData,
                 topicDetails: state.topicDetails,
+                cart: state.cart,
+                cartLength: state.cartLength,
                 getTopicDetails,
                 postNewTopic,
                 getTopics,
                 saveTopic,
                 search,
                 deleteTask,
+                addProductToCard,
+                checkProductInCart,
+                changeProductCount,
+                getCart,
             }}
         >
             {children}
