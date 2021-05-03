@@ -19,9 +19,10 @@
 
  .details_btns {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     width: 600px;
     margin-top: 50px;
+    margin-bottom: 10px ;
   }
   .details_btns button {
     font-family: "Montserrat", sans-serif;
@@ -277,3 +278,4 @@ img {
 a{
   text-decoration: none;
 }
+
