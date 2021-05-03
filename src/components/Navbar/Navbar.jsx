@@ -17,7 +17,7 @@ function Navbar() {
       search(e.target.value)
     }
     useEffect(() =>{
-      console.log(searchData);
+      // console.log(searchData);
     },[searchData])
 
   return (

@@ -31,6 +31,8 @@ const Routes = () => {
                 <Route exact path="/payment" component={CreditCard}/>
                 <Route exact path="/signup" component={SignUp} />
                 <Route exact path="/login" component={SignIn} />
+                {/* korzina */}
+                <Route exact path="/cart" component={Cart} />
 
             </Switch>
             <Footer />
