@@ -44,7 +44,7 @@ const AddTopics = () => {
             <input className="inp-add" value={topic.price} name="price" onChange={handleValues} type="text" placeholder="Цена"/>
             {/* <input className="inp-add" value={topic.subTitle} name="subTitle" onChange={handleValues} type="text" placeholder="Подзаголовок"/>
         <input className="inp-add" value={topic.secondImg} name="secondImg" onChange={handleValues} type="text" placeholder="Второе изображение"/> */}
-            {/* <input className="inp-add" value={topic.secondDescription} name="secondDescription" onChange={handleValues} type="text" placeholder="Второе описание"/> */}
+            <input className="inp-add" value={topic.secondDescription} name="secondDescription" onChange={handleValues} type="text" placeholder="Genre"/>
             <button className="btn-add" onClick={handleClick}>Добавить</button>
         </div>
     );

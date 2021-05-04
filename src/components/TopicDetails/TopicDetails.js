@@ -59,7 +59,7 @@ const TopicDetails = (props) => {
                                <textarea name="price" onChange={handleValue}>{topicDetails.price}</textarea>
                                {/* <textarea name="secondImg" onChange={handleValue}>{topicDetails.secondImg}</textarea> */}
                                {/* <textarea name="subTitle" onChange={handleValue}>{topicDetails.subTitle}</textarea> */}
-                               {/* <textarea name="secondDescription" className="box-desc" onChange={handleValue}>{topicDetails.secondDescription}</textarea> */}
+                               <textarea name="secondDescription" className="box-desc" onChange={handleValue}>{topicDetails.secondDescription}</textarea>
                                 </div>
                            ) : (
                             <>
@@ -82,7 +82,6 @@ const TopicDetails = (props) => {
                                 <p className="box-desc">{topicDetails.description}</p>
                                 <img  src={topicDetails.img} alt="topic-img"/> */}
                                 {/* <h2>{topicDetails.subTitle}</h2> */}
-                                {/* <p className="box-desc">{topicDetails.secondDescription}</p> */}
                                 {/* <img src={topicDetails.secondImg} alt="topic-img"/> */}
                             </>
                            )}
