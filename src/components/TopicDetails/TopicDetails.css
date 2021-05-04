@@ -258,7 +258,6 @@ img {
   font-size: 25px;
   /* font-family: "Montserrat"; */
   font-weight: 500;
-  /* width: 80%; */
   height: 4rem;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -270,7 +269,7 @@ img {
 
 .card-desc{
   font-size: 18px;
-    /* overflow:hidden; */
+    overflow:hidden;
   text-decoration: none;
   list-style: none;
   color: black;
