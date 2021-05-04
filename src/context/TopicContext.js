@@ -70,11 +70,10 @@ const TopicContextProvider = ({ children }) => {
     }   
 
     async function  deleteTask(id){
-        // console.log(id );
         await axios.delete(`http://localhost:8000/topics/${id}`)
 
+        getTopics()
     }
-    // getTopics()
 
     // KORZINA
     function addProductToCard(product){

@@ -9,7 +9,6 @@ import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
-// import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { authContext } from "../../context/AuthContext";
@@ -65,11 +64,6 @@ export default function SignUp(props) {
 
     const { registerUser } = useContext(authContext);
 
-    // function handleForm(e){
-    //     e.preventDefault()
-    //     console.log(e.target[0].value)
-    //     console.log(e.target[2].value)
-    // }
 
     return (
         <Grid container component="main" className={classes.root}>
