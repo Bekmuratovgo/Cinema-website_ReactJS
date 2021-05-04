@@ -16,7 +16,7 @@ const Cart = () => {
     return (
         <div className="cart">
             {cart.products ? (
-            <div>
+            <div className="asd">
                 <table>
                     <thead>
                         <tr>
