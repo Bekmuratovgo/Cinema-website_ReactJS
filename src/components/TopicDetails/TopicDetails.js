@@ -51,6 +51,7 @@ const TopicDetails = (props) => {
                  <div className="wraper">
                     <div className="main-left">
                        <div className="main-box">
+         
                            {editStatus ? (
                             <div className="edit-textareas">
                                <textarea name="title" onChange={handleValue}>{topicDetails.title}</textarea>
@@ -68,7 +69,7 @@ const TopicDetails = (props) => {
                                     <div className="card-body">
                                         <i className="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
                                         </i>
-                                        <h1 className="card-title">{topicDetails.title}</h1>
+                                        <h2 className="card-title">{topicDetails.title}</h2>
                                         <p className="card-desc" style={{fontSize:"18px"}}>{topicDetails.description}</p>
                                         <Typography variant="h6" style={{color: "black"}}>
                                             {topicDetails.price} сом

@@ -1,5 +1,6 @@
 import { CircularProgress } from '@material-ui/core';
 import React, {useContext, useEffect} from 'react';
+import { Link } from 'react-router-dom';
 import { topicContext } from '../../context/TopicContext';
 import { calcTotalPrice } from '../helpers/calcPrice';
 
@@ -47,7 +48,9 @@ const Cart = () => {
                     </tbody>
                 </table>
                 <h4>Total: {calcTotalPrice(cart.products)} </h4>
-                <button>Buy:</button>
+                <Link to="/form-order">
+                    <button>Buy:</button>
+                </Link>
             </div> 
             ) : (
                 <CircularProgress />

@@ -13,35 +13,40 @@
       "description": "In Rhyme City, a huge city",
       "img": "https://www.joblo.com/assets/images/joblo/posters/2019/02/detective-pikachu-trailer-poster-main.jpg",
       "price": "280",
-      "id": 2
+      "id": 2,
+      "genre": "fantasy"
     },
     {
       "title": "Raya and the Last Dragon",
       "description": "Once upon a time, in the magical ",
       "img": "https://www.themoviedb.org/t/p/w440_and_h660_face/tHane7cU8ACGU8uLqEDVEN3BuhQ.jpg",
       "price": "250",
-      "id": 3
+      "id": 3,
+      "genre": "horror"
     },
     {
       "title": "Mortal Kombat",
       "description": "Mixed martial arts fighter ",
       "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/f56710bd-85c3-49b8-9260-2fa8a3d07c01/300x450",
       "price": "250",
-      "id": 4
+      "id": 4,
+      "genre": "action"
     },
     {
       "title": "Spider-man: homecoming",
       "description": "After a historic encounter ",
       "img": "https://upload.wikimedia.org/wikipedia/ru/5/5a/Spider-Man_Homecoming_logo.jpg",
       "price": "350",
-      "id": 5
+      "id": 5,
+      "genre": "mistery"
     },
     {
       "title": "Avengers: Infinity war",
       "description": "While the Avengers and their",
       "img": "https://upload.wikimedia.org/wikipedia/ru/4/4d/Avengers_Infinity_War_poster.jpg",
       "price": "320",
-      "id": 6
+      "id": 6,
+      "genre": "romanse"
     }
   ]
 }
