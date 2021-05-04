@@ -40,7 +40,7 @@
 
 .nav-menu {
     display: grid;
-    grid-template-columns: repeat(6, auto);
+    grid-template-columns: repeat(7, auto);
     grid-gap: 15px;
     list-style: none;
     text-align: center;
@@ -148,39 +148,38 @@
 }
 
 /* SEARCH LIVE */
-.search-result{
+.search-result {
     width: 190px;
     position: absolute;
-    background-color: white;;
+    background-color: white;
     z-index: 10;
     margin-left: 10px;
- }
- /* .search-item{
+}
+/* .search-item{
     position: relative;
  } */
- .search-result div{
+.search-result div {
     border-bottom: 1px solid black;
     margin-bottom: 5px;
- }
- .search-result a{
+}
+.search-result a {
     text-decoration: none;
     color: black;
- }
+}
 
- .nav-cart span{
-     position: absolute;
-     top: -15px;
-     right: -10px;
-     background: red;
-     font-size: 10px;
-     color: white;
-     padding: 3px 5px;
-     border-radius: 50%;
-     z-index: -1;
+.nav-cart span {
+    position: absolute;
+    top: -15px;
+    right: -10px;
+    background: red;
+    font-size: 10px;
+    color: white;
+    padding: 3px 5px;
+    border-radius: 50%;
+    z-index: -1;
+}
 
- }
-
-.x{
+.x {
     float: right;
     width: 18px;
 }

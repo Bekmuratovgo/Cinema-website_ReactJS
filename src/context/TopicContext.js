@@ -1,7 +1,10 @@
-import React, { useReducer } from 'react';
-import axios from 'axios'
-import { calcsubPrice, calcTotalPrice, getCountProductsCart } from '../components/helpers/calcPrice';
-
+import React, { useReducer } from "react";
+import axios from "axios";
+import {
+    calcsubPrice,
+    calcTotalPrice,
+    getCountProductsCart,
+} from "../components/helpers/calcPrice";
 
 export const topicContext = React.createContext();
 
@@ -11,166 +14,191 @@ const INIT_STATE = {
     searchData: [],
     paginationPages: 1,
     cart: {},
-    cartLength: getCountProductsCart()
-}
+    cartLength: getCountProductsCart(),
+};
 
-const reducer = (state=INIT_STATE, action) =>{
-    switch(action.type){
-        case "GET_TOPICS": 
-            return {...state, topicsData: action.payload }
+const reducer = (state = INIT_STATE, action) => {
+    switch (action.type) {
+        case "GET_TOPICS":
+            return {
+                ...state,
+                topicsData: action.payload.data,
+                paginationPages: Math.ceil(
+                    action.payload.headers["x-total-count"] / 4
+                ),
+            };
         case "GET_TOPIC_DETAILS":
-            return{...state, topicDetails: action.payload}
+            return { ...state, topicDetails: action.payload };
         case "SEARCH":
-            return {...state, searchData: action.payload}
+            return { ...state, searchData: action.payload };
         case "CHANGE_CART_COUNT":
-            return {...state, cartLength: action.payload}
+            return { ...state, cartLength: action.payload };
         case "GET_CART":
-            return {...state, cart: action.payload}
-        default: return state
+            return { ...state, cart: action.payload };
+        default:
+            return state;
     }
-}
+};
 
 const TopicContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, INIT_STATE)
+    async function postNewTopic(topic) {
+        axios.post("http://localhost:8000/topics", topic);
 
-    async function postNewTopic(topic){
-        axios.post('http://localhost:8000/topics' , topic)
-
-        await getTopics()
+        await getTopics();
     }
 
-    async function getTopics(){
-        let { data } = await axios.get('http://localhost:8000/topics')
-    
+    // async function getTopics(){
+    //     let { data } = await axios.get('http://localhost:8000/topics')
+
+    //     dispatch({
+    //         type: "GET_TOPICS",
+    //         payload: data
+    //     })
+    // }
+    async function getTopics(history) {
+        // const search = new URLSearchParams(history.location.search);
+        // search.set("_limit", 4);
+        // history.push(`${history.location.pathname}?${search.toString()}`);
+
+        let res = await axios.get(
+            `http://localhost:8000/topics/${window.location.search}`
+        );
         dispatch({
             type: "GET_TOPICS",
-            payload: data
-        })
+            payload: res,
+        });
     }
 
-    async function getTopicDetails(id){
-        let { data } = await axios.get(`http://localhost:8000/topics/${id}`)
+    async function getTopicDetails(id) {
+        let { data } = await axios.get(`http://localhost:8000/topics/${id}`);
         dispatch({
             type: "GET_TOPIC_DETAILS",
-            payload: data
-        })
+            payload: data,
+        });
     }
 
-    async function saveTopic(id, newTopic){
-        await axios.patch(`http://localhost:8000/topics/${id}`,newTopic)
-        getTopicDetails(id)
+    async function saveTopic(id, newTopic) {
+        await axios.patch(`http://localhost:8000/topics/${id}`, newTopic);
+        getTopicDetails(id);
     }
 
-    async function search(value){
-       let { data } =  await axios.get(`http://localhost:8000/topics?q=${value}`)
-       dispatch({
-           type: 'SEARCH',
-           payload: data
-       })
-    }   
+    async function search(value) {
+        let { data } = await axios.get(
+            `http://localhost:8000/topics?q=${value}`
+        );
+        dispatch({
+            type: "SEARCH",
+            payload: data,
+        });
+    }
 
-    async function  deleteTask(id){
-        await axios.delete(`http://localhost:8000/topics/${id}`)
+    async function deleteTask(id) {
+        await axios.delete(`http://localhost:8000/topics/${id}`);
 
-        getTopics()
+        getTopics();
     }
 
     // KORZINA
-    function addProductToCard(product){
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        if(!cart){
+    function addProductToCard(product) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
             cart = {
                 products: [],
-                totalPrice: 0
-            }
+                totalPrice: 0,
+            };
         }
         let newProduct = {
             item: product,
             count: 1,
-            subPrice: 0
-        }
-        
+            subPrice: 0,
+        };
 
-        
-        let filteredCart = cart.products.filter(elem => elem.item.id === product.id)
-        if(filteredCart.length >0){
-            cart.products = cart.products.filter(elem => elem.item.id !== product.id)
-        }else{
-            cart.products.push(newProduct)
+        let filteredCart = cart.products.filter(
+            (elem) => elem.item.id === product.id
+        );
+        if (filteredCart.length > 0) {
+            cart.products = cart.products.filter(
+                (elem) => elem.item.id !== product.id
+            );
+        } else {
+            cart.products.push(newProduct);
         }
 
-        newProduct.subPrice = calcsubPrice(newProduct)
-        cart.totalPrice = calcTotalPrice(cart.products)
-        localStorage.setItem("cart", JSON.stringify(cart))
-        
+        newProduct.subPrice = calcsubPrice(newProduct);
+        cart.totalPrice = calcTotalPrice(cart.products);
+        localStorage.setItem("cart", JSON.stringify(cart));
+
         dispatch({
             type: "CHANGE_CART_COUNT",
-            payload: cart.products.length
-        })
+            payload: cart.products.length,
+        });
         // stopPropagation()
     }
 
-    function getCart(){
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        if(!cart){
+    function getCart() {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
             cart = {
                 products: [],
-                totalPrice: 0
-            }
+                totalPrice: 0,
+            };
         }
         dispatch({
             type: "GET_CART",
-            payload: cart
-        })
+            payload: cart,
+        });
     }
 
-    function changeProductCount(count, id){
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        cart.products = cart.products.map(elem => {
-            if(elem.item.id === id){
-                elem.count = count
-                elem.subPrice = calcsubPrice(elem)
+    function changeProductCount(count, id) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        cart.products = cart.products.map((elem) => {
+            if (elem.item.id === id) {
+                elem.count = count;
+                elem.subPrice = calcsubPrice(elem);
             }
-            return elem
-        })
-        cart.totalPrice = calcTotalPrice(cart.products)
-        localStorage.setItem("cart", JSON.stringify(cart))
-        getCart()
+            return elem;
+        });
+        cart.totalPrice = calcTotalPrice(cart.products);
+        localStorage.setItem("cart", JSON.stringify(cart));
+        getCart();
     }
 
-
-    function checkProductInCart(id){
-        let cart = JSON.parse(localStorage.getItem('cart'));
-        if(!cart){
+    function checkProductInCart(id) {
+        let cart = JSON.parse(localStorage.getItem("cart"));
+        if (!cart) {
             cart = {
                 products: [],
-                totalPrice: 0
-            }
-        }let newCart =cart.products.filter(elem => elem.item.id ===id)
-            return newCart.length > 0 ? true: false
+                totalPrice: 0,
+            };
+        }
+        let newCart = cart.products.filter((elem) => elem.item.id === id);
+        return newCart.length > 0 ? true : false;
     }
+    const [state, dispatch] = useReducer(reducer, INIT_STATE);
 
     return (
-        <topicContext.Provider value={{
-            topicsData: state.topicsData,
-            searchData: state.searchData,
-            topicsData: state.topicsData,
-            topicDetails: state.topicDetails,
-            cart: state.cart,
-            cartLength: state.cartLength,
-            getTopicDetails,
-            postNewTopic ,
-            getTopics,
-            saveTopic,
-            search,
-            deleteTask,
-            addProductToCard,
-            checkProductInCart,
-            changeProductCount,
-            getCart
-        }}>
-            {children} 
+        <topicContext.Provider
+            value={{
+                topicsData: state.topicsData,
+                searchData: state.searchData,
+                topicsData: state.topicsData,
+                topicDetails: state.topicDetails,
+                cart: state.cart,
+                cartLength: state.cartLength,
+                getTopicDetails,
+                postNewTopic,
+                getTopics,
+                saveTopic,
+                search,
+                deleteTask,
+                addProductToCard,
+                checkProductInCart,
+                changeProductCount,
+                getCart,
+            }}
+        >
+            {children}
         </topicContext.Provider>
-    )
-}
+    );
+};
 export default TopicContextProvider;

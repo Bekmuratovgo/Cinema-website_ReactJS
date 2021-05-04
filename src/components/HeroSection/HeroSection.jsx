@@ -1,16 +1,13 @@
-import React from 'react';
-import './HeroSection.css';
-import 'react-responsive-carousel/lib/styles/carousel.min.css' 
-import video1 from '../../assets/video1.mp4'
-import video2 from '../../assets/video2.mp4'
-import { Carousel } from 'react-responsive-carousel';
-import ReactPlayer from 'react-player'
-import video3 from '../../assets/video3.mp4'
-
-
+import React from "react";
+import "./HeroSection.css";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import video1 from "../../assets/video1.mp4";
+import video2 from "../../assets/video2.mp4";
+import { Carousel } from "react-responsive-carousel";
+import ReactPlayer from "react-player";
+import video3 from "../../assets/video3.mp4";
 
 const HeroSection = () => {
-
     return (
         <div >
           <Carousel>
@@ -53,4 +50,3 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
-    

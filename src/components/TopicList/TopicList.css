@@ -5,8 +5,9 @@
     grid-auto-rows: 200px;
     margin-top: 50px;
 } */
-.list{
-    background: url('https://screenvisionmedia.com/wp-content/uploads/2015/09/movie-bg.jpg');
+.list {
+    display: flex;
+    background: url("https://screenvisionmedia.com/wp-content/uploads/2015/09/movie-bg.jpg");
     display: flow-root;
     /* margin: -44px; */
     /* margin-top: -44px;

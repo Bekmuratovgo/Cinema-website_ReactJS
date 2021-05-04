@@ -1,24 +1,28 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-import { topicContext } from '../../context/TopicContext';
+import { topicContext } from "../../context/TopicContext";
 import "./Navbar.css";
 
 function Navbar() {
     const [click, setClick] = useState(false);
-
+    const [state, setState] = useState();
     const handleClick = () => setClick(!click);
     const closeMenu = () => setClick(false);
 
-    const {search, searchData} = useContext(topicContext)
-    const [searchValue, setSearchValue] = useState('')
+    const { search, searchData } = useContext(topicContext);
+    const [searchValue, setSearchValue] = useState("");
 
     const handleValue = (e) => {
-      setSearchValue(e.target.value)
-      search(e.target.value)
+        setSearchValue(e.target.value);
+        search(e.target.value);
+    };
+    useEffect(() => {
+        console.log(searchData);
+    }, [searchData]);
+
+    function logout() {
+        localStorage.setItem("user", JSON.stringify(0));
     }
-    useEffect(() =>{
-      // console.log(searchData);
-    },[searchData])
 
    
 
@@ -70,12 +74,22 @@ function Navbar() {
                             >
                                 Sign In
                             </Link>
-                        </li>  
-          </ul>
-        </div>
-      </nav>
-    </>
-  );
+                        </li>
+                        <li>
+                            <Link
+                                to="/logout"
+                                className="nav-links"
+                                onClick={logout}
+                                variant={"outlined"}
+                            >
+                                Log out
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </>
+    );
 }
 
 export default Navbar;
