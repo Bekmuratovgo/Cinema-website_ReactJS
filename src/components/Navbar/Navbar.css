@@ -149,15 +149,15 @@
 
 /* SEARCH LIVE */
 .search-result{
-    /* width: 100%; */
+    width: 190px;
     position: absolute;
     background-color: white;;
     z-index: 10;
     margin-left: 10px;
  }
- .search-item{
+ /* .search-item{
     position: relative;
- }
+ } */
  .search-result div{
     border-bottom: 1px solid black;
     margin-bottom: 5px;

@@ -1,39 +1,7 @@
 {
   "topics": [
     {
-      "title": "Мортал Комбат",
-      "description": "Боец смешанных единоборств Коул Янг не раз соглашался проиграть за деньги. ",
-      "img": "https://avatars.mds.yandex.net/get-kinopoisk-image/4303601/f56710bd-85c3-49b8-9260-2fa8a3d07c01/300x450",
-      "secondDescription": "Action",
-      "id": 1
-    },
-    {
-      "title": "Годзилла против Конга",
-      "description": "Конг и группа ученых отправляются в опасное путешествие в поисках родного дома гиганта. Среди них девочка Джия, единственная, кто умеет общаться с Конгом.",
-      "img": "https://www.themoviedb.org/t/p/w440_and_h660_face/w6s3yQIMKMc6cmtdEtBkkGCA3V1.jpg",
-      "secondDescription": "Fantasy",
-      "id": 2
-    },
-    {
-      "title": "Покемон: Детектив Пикачу",
-      "description": "В Райм-Сити, огромном городе, где рядом с людьми живут Покемоны, внезапно исчезает частный детектив Гарри Гудман.",
-      "img": "https://www.joblo.com/assets/images/joblo/posters/2019/02/detective-pikachu-trailer-poster-main.jpg",
-      "secondDescription": "Fantasy",
-      "id": 3
-    },
-    {
-      "title": "Райя и последний дракон",
-      "description": "Давным-давно в волшебной стране Кумандре бок о бок с людьми жили драконы — создатели и хранители воды. Мирной жизни пришел конец, когда появились друуны.",
-      "img": "https://www.themoviedb.org/t/p/w440_and_h660_face/tHane7cU8ACGU8uLqEDVEN3BuhQ.jpg",
-      "secondDescription": "Romance",
-      "id": 4
-    },
-    {
-      "title": "Чудо-женщина: 1984 ",
-      "description": "Диана всё ещё грустит по погибшему Стиву, борется с мелким криминалом и работает в музее Смитсоновского института.",
-      "img": "https://thumbs.dfs.ivi.ru/storage33/contents/c/a/187d6bebc9ee0808b47385bf1defe0.jpg",
-      "secondDescription": "Horror",
-      "id": 5
+      
     }
   ]
 }
