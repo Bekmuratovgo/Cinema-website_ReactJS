@@ -179,3 +179,8 @@
      z-index: -1;
 
  }
+
+.x{
+    float: right;
+    width: 18px;
+}

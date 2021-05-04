@@ -12,4 +12,12 @@
     /* margin-top: -44px;
     padding-top: 40px; */
     padding-bottom: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
+/* .list{
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    
+} */

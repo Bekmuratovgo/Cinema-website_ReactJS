@@ -20,6 +20,8 @@ function Navbar() {
       // console.log(searchData);
     },[searchData])
 
+   
+
   return (
     <>
       <nav className='navbar'>
@@ -40,6 +42,7 @@ function Navbar() {
             </li>
             <li className='search-item'><input placeholder="Search" onChange={handleValue} />
             <div className="search-result">
+              
               {searchData.map(item => (
                 <Link to={`/details/${item.id}`}>
                   <div>{item.title}</div>
