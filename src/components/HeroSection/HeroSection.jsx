@@ -17,6 +17,17 @@ const HeroSection = () => {
             <div className="section-container">
               <ReactPlayer
                 autoPlay
+                url={video3}
+                volume='1'
+                muted
+                width='100%'
+                height='100%'
+                playing={true}
+              />
+            </div>
+            <div className="section-container">
+            <ReactPlayer
+                autoPlay
                 url={video2}
                 volume='1'
                 muted
@@ -29,17 +40,6 @@ const HeroSection = () => {
             <ReactPlayer
                 autoPlay
                 url={video1}
-                volume='1'
-                muted
-                width='100%'
-                height='100%'
-                playing={true}
-              />
-            </div>
-            <div className="section-container">
-            <ReactPlayer
-                autoPlay
-                url={video3}
                 volume='1'
                 muted
                 width='100%'

@@ -17,16 +17,16 @@ const TopicCard = (props) => {
                     </i>
                     <h1 class="card-title">{props.item.title}</h1>
                     <p className="card-desc" style={{fontSize:"18px"}}>{props.item.description}</p>
-                    <Typography variant="h5">
+                    <Typography variant="h6" style={{color: "black"}}>
                         {props.item.price} сом
                     </Typography>
-                    <span class="movie_info">2019</span>
+                    {/* <span class="movie_info">2019</span> */}
                     <span class="movie_info" style={{float:"right"}}><i class="fas fa-star"></i> 9 / 10</span>
+                    <span class="movie_info"><i class="fas fa-shopping-cart"></i><button  onClick={() => addProductToCard(
+                        props.item)} 
+                        color={checkProductInCart(props.item.id) ? "secondary" : "primary"}></button></span>
                 </div>
             </Link>
-                    <span class="movie_info float-right"><button  onClick={() => addProductToCard(
-                        props.item)} 
-                        color={checkProductInCart(props.item.id) ? "secondary" : "primary"}>Add</button></span>
         </div>
     );
 };

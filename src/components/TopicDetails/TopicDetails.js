@@ -59,7 +59,7 @@ const TopicDetails = (props) => {
                                <textarea name="price" onChange={handleValue}>{topicDetails.price}</textarea>
                                {/* <textarea name="secondImg" onChange={handleValue}>{topicDetails.secondImg}</textarea> */}
                                {/* <textarea name="subTitle" onChange={handleValue}>{topicDetails.subTitle}</textarea> */}
-                               <textarea name="secondDescription" className="box-desc" onChange={handleValue}>{topicDetails.secondDescription}</textarea>
+                               {/* <textarea name="secondDescription" className="box-desc" onChange={handleValue}>{topicDetails.secondDescription}</textarea> */}
                                 </div>
                            ) : (
                             <>
@@ -70,11 +70,11 @@ const TopicDetails = (props) => {
                                         </i>
                                         <h1 className="card-title">{topicDetails.title}</h1>
                                         <p className="card-desc" style={{fontSize:"18px"}}>{topicDetails.description}</p>
-                                        <Typography variant="h5">
+                                        <Typography variant="h6" style={{color: "black"}}>
                                             {topicDetails.price} сом
                                         </Typography>
-                                        <span className="movie_info">2019</span>
-                                        <span className="movie_info float-right"><i className="fas fa-star"></i> 9 / 10</span>
+                                        {/* <span className="movie_info">2019</span> */}
+                                        <span className="movie_info float-right" style={{float:"right"}}><i className="fas fa-star"></i> 9 / 10</span>
                                     </div>
                                 </div>
 {/* 

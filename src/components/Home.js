@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import AnimationCard from './AnimationCard/AnimationCard';
 import Footer from './Footer/Footer';
 import HeroSection from './HeroSection/HeroSection';
 import Filter from './TopicList/Filter';
@@ -11,6 +12,7 @@ const Home = () => {
         <>
           <HeroSection/>  
           <Filter />
+          <AnimationCard/>
           <TopicList/>
         </>
     );
