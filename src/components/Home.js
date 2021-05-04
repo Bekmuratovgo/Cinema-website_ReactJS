@@ -15,8 +15,8 @@ const Home = () => {
             <AnimationCard />
             <Grid container>
                 <SideBar />
-                <TopicList />
             </Grid>
+            <TopicList />
         </>
     );
 };

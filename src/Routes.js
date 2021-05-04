@@ -13,6 +13,7 @@ import CreditCard from "./components/Payment/CreditCard";
 import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import AuthContextProvider from "./context/AuthContext";
+import FormOrder from "./components/FormOrder/FormOrder";
 
 const Routes = () => {
     return (
@@ -30,6 +31,7 @@ const Routes = () => {
                     <Route exact path="/login" component={SignIn} />
                     {/* korzina */}
                     <Route exact path="/cart" component={Cart} />
+                    <Route exact path="/form-order" component={FormOrder} />
                 </Switch>
                 <Footer />
             </BrowserRouter>
