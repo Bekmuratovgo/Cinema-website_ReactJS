@@ -15,12 +15,12 @@ const TopicCard = (props) => {
                     <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
                     </i>
                     <h1 class="card-title">{props.item.title}</h1>
-                    <p className="card-title" style={{fontSize:"18px"}}>{props.item.description}</p>
+                    <p className="card-desc" style={{fontSize:"18px"}}>{props.item.description}</p>
                     <Typography variant="h5">
                         {props.item.price} сом
                     </Typography>
                     <span class="movie_info">2019</span>
-                    <span class="movie_info float-right"><i class="fas fa-star"></i> 9 / 10</span>
+                    <span class="movie_info" style={{float:"right"}}><i class="fas fa-star"></i> 9 / 10</span>
                 </div>
             </Link>
                     <span class="movie_info float-right"><button  onClick={() => addProductToCard(
