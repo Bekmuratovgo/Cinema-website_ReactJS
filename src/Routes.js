@@ -14,25 +14,28 @@ import SignIn from "./components/SignIn/SignIn";
 import SignUp from "./components/SignUp/SignUp";
 import AuthContextProvider from "./context/AuthContext";
 
+
+
 const Routes = () => {
     return (
         <AuthContextProvider>
-            <BrowserRouter>
-                <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/admin" component={Admin} />
-                    <Route exact path="/list" component={TodoList} />
-                    <Route exact path="/details/:id" component={TopicDetails} />
-                    <Route exact path="/cart" component={Cart} />
-                    <Route exact path="/payment" component={CreditCard} />
-                    <Route exact path="/signup" component={SignUp} />
-                    <Route exact path="/login" component={SignIn} />
-                    {/* korzina */}
-                    <Route exact path="/cart" component={Cart} />
-                </Switch>
-                <Footer />
-            </BrowserRouter>
+        <BrowserRouter>
+            <Navbar />  
+            <Switch>
+                <Route exact path="/" component={Home}  />
+                <Route exact path="/admin" component={Admin}/>
+                <Route exact path="/list" component={TodoList}/>
+                <Route exact path="/details/:id" component={TopicDetails} />
+                <Route exact path="/cart" component={Cart} />
+                <Route exact path="/payment" component={CreditCard}/>
+                <Route exact path="/signup" component={SignUp} />
+                <Route exact path="/login" component={SignIn} />
+                {/* korzina */}
+                <Route exact path="/cart" component={Cart} />
+
+            </Switch>
+            <Footer />
+        </BrowserRouter>
         </AuthContextProvider>
     );
 };

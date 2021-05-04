@@ -3,7 +3,7 @@ import { topicContext } from '../../context/TopicContext';
 import TopicCard from '../TopicCard/TopicCard'
 
 import './TopicList.css'
-// Bootstrap
+// Bootstrap 
 
 
 const TopicList = () => {
@@ -14,14 +14,19 @@ const TopicList = () => {
     }, [])
 
     return (
-        <div className="list">
-            <>
-                {topicsData.map((item) =>(
-                <TopicCard key={item.id} item={item} />
-                
-            ))}
-            </>
-        </div>
+        // <div className="container">
+        //     <div className="row">
+                <div className="list">
+                    <>
+                        {topicsData.map((item) =>(
+                        <TopicCard key={item.id} item={item} />
+                        
+                    ))}
+                    </>
+                </div>
+
+        //     </div>
+        // </div>
     );
 };
 

@@ -7,6 +7,7 @@ const AddTopics = () => {
             title: '',
             description: '',
             img: '',
+            price: ''
             // subTitle: '',
             // secondDescription: '',
             // secondImg:''
@@ -29,7 +30,7 @@ const AddTopics = () => {
             title: '',
             description: '',
             img: '',
-            secondImg: ''
+            price:''
             // subTitle: '',
             // secondDescription: '',
         })
@@ -40,10 +41,10 @@ const AddTopics = () => {
             <input className="inp-add" value={topic.title} name="title" onChange={handleValues} type="text" placeholder="Заголовок"/>
             <input className="inp-add" value={topic.description} name="description" onChange={handleValues} type="text" placeholder="Описание"/>
             <input className="inp-add" value={topic.img} name="img" onChange={handleValues} type="text" placeholder="Изображение"/>
-            {/* <input className="inp-add" value={topic.secondImg} name="secondImg" onChange={handleValues} type="text" placeholder="Второе изображение"/> */}
+            <input className="inp-add" value={topic.price} name="price" onChange={handleValues} type="text" placeholder="Цена"/>
             {/* <input className="inp-add" value={topic.subTitle} name="subTitle" onChange={handleValues} type="text" placeholder="Подзаголовок"/>
         <input className="inp-add" value={topic.secondImg} name="secondImg" onChange={handleValues} type="text" placeholder="Второе изображение"/> */}
-            {/* <input className="inp-add" value={topic.secondDescription} name="secondDescription" onChange={handleValues} type="text" placeholder="Второе описание"/> */}
+            {/* <input className="inp-add" value={topic.secondDescription} name="secondDescription" onChange={handleValues} type="text" placeholder="Genre"/> */}
             <button className="btn-add" onClick={handleClick}>Добавить</button>
         </div>
     );

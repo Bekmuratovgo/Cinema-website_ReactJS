@@ -8,6 +8,7 @@ import './TopicDetails.css'
 
 const TopicDetails = (props) => {
     const { getTopicDetails, topicDetails, saveTopic, deleteTask} = useContext(topicContext)
+    console.log("topicDetails", topicDetails)
     const [editStatus, setEditStatus] = useState(false)
     const [editedTopic, setEditedTopic] = useState();
 
@@ -29,10 +30,10 @@ const TopicDetails = (props) => {
     }
 
     useEffect(() =>{
-        // setTimeout(() => {
+        setTimeout(() => {
 
-        //     getTopicDetails(props.match.params.id)
-        // }, 300)
+            getTopicDetails(props.match.params.id)
+        }, 300)
 
         getTopicDetails(props.match.params.id)
 
@@ -55,6 +56,7 @@ const TopicDetails = (props) => {
                                <textarea name="title" onChange={handleValue}>{topicDetails.title}</textarea>
                                <textarea name="description" className="box-desc" onChange={handleValue} >{topicDetails.description}</textarea>
                                <textarea name="img" onChange={handleValue}>{topicDetails.img}</textarea>
+                               <textarea name="price" onChange={handleValue}>{topicDetails.price}</textarea>
                                {/* <textarea name="secondImg" onChange={handleValue}>{topicDetails.secondImg}</textarea> */}
                                {/* <textarea name="subTitle" onChange={handleValue}>{topicDetails.subTitle}</textarea> */}
                                {/* <textarea name="secondDescription" className="box-desc" onChange={handleValue}>{topicDetails.secondDescription}</textarea> */}
@@ -67,12 +69,12 @@ const TopicDetails = (props) => {
                                         <i className="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
                                         </i>
                                         <h1 className="card-title">{topicDetails.title}</h1>
-                                        <p className="card-title" style={{fontSize:"18px"}}>{topicDetails.description}</p>
-                                        <Typography variant="h5">
-                                            {props.item.price} сом
+                                        <p className="card-desc" style={{fontSize:"18px"}}>{topicDetails.description}</p>
+                                        <Typography variant="h6" style={{color: "black"}}>
+                                            {topicDetails.price} сом
                                         </Typography>
-                                        <span className="movie_info">2019</span>
-                                        <span className="movie_info float-right"><i className="fas fa-star"></i> 9 / 10</span>
+                                        {/* <span className="movie_info">2019</span> */}
+                                        <span className="movie_info float-right" style={{float:"right"}}><i className="fas fa-star"></i> 9 / 10</span>
                                     </div>
                                 </div>
 {/* 
@@ -80,7 +82,6 @@ const TopicDetails = (props) => {
                                 <p className="box-desc">{topicDetails.description}</p>
                                 <img  src={topicDetails.img} alt="topic-img"/> */}
                                 {/* <h2>{topicDetails.subTitle}</h2> */}
-                                {/* <p className="box-desc">{topicDetails.secondDescription}</p> */}
                                 {/* <img src={topicDetails.secondImg} alt="topic-img"/> */}
                             </>
                            )}
