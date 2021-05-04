@@ -3,6 +3,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { topicContext } from '../../context/TopicContext';
 import './TopicCard.css'
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 
 
 const TopicCard = (props) => {

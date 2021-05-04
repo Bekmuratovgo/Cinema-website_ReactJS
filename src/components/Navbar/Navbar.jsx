@@ -48,8 +48,8 @@ function Navbar() {
             </div>
             
             </li>
-            <li className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i className="fas fa-shopping-cart"></i></Link>
-            </li>
+            <Link to="/cart" className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i className="fas fa-shopping-cart"></i></Link>
+            </Link>
              <li>
                   <Link
                       to="/signup"
