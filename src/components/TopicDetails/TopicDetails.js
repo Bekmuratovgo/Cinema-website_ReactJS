@@ -55,6 +55,7 @@ const TopicDetails = (props) => {
                                <textarea name="title" onChange={handleValue}>{topicDetails.title}</textarea>
                                <textarea name="description" className="box-desc" onChange={handleValue} >{topicDetails.description}</textarea>
                                <textarea name="img" onChange={handleValue}>{topicDetails.img}</textarea>
+                               <textarea name="price" onChange={handleValue}>{topicDetails.price}</textarea>
                                {/* <textarea name="secondImg" onChange={handleValue}>{topicDetails.secondImg}</textarea> */}
                                {/* <textarea name="subTitle" onChange={handleValue}>{topicDetails.subTitle}</textarea> */}
                                {/* <textarea name="secondDescription" className="box-desc" onChange={handleValue}>{topicDetails.secondDescription}</textarea> */}
@@ -67,7 +68,7 @@ const TopicDetails = (props) => {
                                         <i className="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
                                         </i>
                                         <h1 className="card-title">{topicDetails.title}</h1>
-                                        <p className="card-title" style={{fontSize:"18px"}}>{topicDetails.description}</p>
+                                        <p className="card-desc" style={{fontSize:"18px"}}>{topicDetails.description}</p>
                                         <Typography variant="h5">
                                             {props.item.price} сом
                                         </Typography>
