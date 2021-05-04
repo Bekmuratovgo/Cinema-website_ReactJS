@@ -9,7 +9,7 @@ const TopicCard = (props) => {
     const {addProductToCard, checkProductInCart} = useContext(topicContext)
     return (
         <div class="card movie_card">
-            <Link onClick={e=>e.stopPropagation()} to={`/details/${props.item.id}`}>
+            <Link to={`/details/${props.item.id}`}>
                 <img src={props.item.img} class="card-img-top" alt="..."/>
                 <div class="card-body">
                     <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
