@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { topicContext } from '../../context/TopicContext';
 import "./Navbar.css";
 
 function Navbar() {
@@ -7,6 +8,17 @@ function Navbar() {
 
     const handleClick = () => setClick(!click);
     const closeMenu = () => setClick(false);
+
+    const {search, searchData} = useContext(topicContext)
+    const [searchValue, setSearchValue] = useState('')
+
+    const handleValue = (e) => {
+      setSearchValue(e.target.value)
+      search(e.target.value)
+    }
+    useEffect(() =>{
+      console.log(searchData);
+    },[searchData])
 
   return (
     <>
@@ -26,17 +38,26 @@ function Navbar() {
             </li>
             <li className='nav-item'><Link to='/movies' className='nav-links' onClick={closeMenu}>Movies</Link>
             </li>
-            <li className='search-item'><input placeholder="Search" /></li>
-            <li className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i className="fas fa-shopping-cart"></i></Link>
+            <li className='search-item'><input placeholder="Search" onChange={handleValue} />
+            <div className="search-result">
+              {searchData.map(item => (
+                <Link to={`/details/${item.id}`}>
+                  <div>{item.title}</div>
+                </Link>
+              ))}
+            </div>
+            
             </li>
+            <Link to="/cart" className='nav-item'><Link to='/cart' className='nav-links' onClick={closeMenu}><i className="fas fa-shopping-cart"></i></Link>
+            </Link>
              <li>
                   <Link
-                                to="/signup"
-                                className="nav-links"
-                                onClick={closeMenu}
-                            >
-                                Sign Up
-                            </Link>
+                      to="/signup"
+                      className="nav-links"
+                      onClick={closeMenu}
+                  >
+                      Sign Up
+                  </Link>
                         </li>
                         <li>
                             <Link

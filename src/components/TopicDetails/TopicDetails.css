@@ -173,10 +173,6 @@
  .product-item:hover .button {
     background: #fc5a5a;
  }
-
-
-
-
  /* *{
   font-family: 'Poppins', sans-serif;
    -webkit-user-select: none;
@@ -198,37 +194,41 @@ img {
   width: 22rem;
   height: 600px;
   margin:14px; 
-  border-radius: 10px;
-  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+  /* background: linear-gradient( 
+    90deg
+    , rgb(67, 143, 143) 0%, rgb(114, 105, 27) 100% );  border-radius: 10px; */
+    background: white;
+    border-radius: 12px 12px 5px 5px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
 }
 .movie_card img{
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  height: 33rem;
+  height: 26rem;
   width: 352px;
 }
 .movie_info{ 
   color: #5e5c5c;
 }
+
 .card-body{
   height: 160px;
+  margin: 7px;
 }
 
 .movie_info i{
   font-size: 20px;
 }
-.card-title{
-  width: 80%;
-  height: 4rem;
-}
-.play_button{
+
+.play_button {
   background-color: #ff3d49;
-    position: absolute;
+  position: relative;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  right: 20px;
-  bottom: 111px;
+  float: right;
+  right: 15px;
+  bottom: 42px;
   font-size: 27px;
   padding-left: 21px;
   padding-top: 16px;
@@ -254,189 +254,21 @@ img {
   color: #8e24aa;
 }
 .card-title{
-  margin: 6px;
-  font-size: 18px;
-  font-family: "Montserrat";
+  font-size: 27px;
+  /* font-family: "Montserrat"; */
+  font-weight: 500;
+  width: 80%;
+  height: 4rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: black;
 }
 
-/* КАРТОЧКА */
-/* @import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800');
+.card-desc{
+  font-size: 18px;
+    overflow:hidden;
+  }
 
 a{
   text-decoration: none;
 }
-
-*{
-  box-sizing: border-box;
-  margin: 0;
-}
-
-html, body{
-  margin: 0;
-  background: url('https://screenvisionmedia.com/wp-content/uploads/2015/09/movie-bg.jpg');
-  background-image: url("");
-  font-family: 'Montserrat', helvetica, arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-}
-
-.movie_card{
-  position: relative;
-  display: block;
-  width: 800px;
-  height: 350px;
-  margin: 100px auto; 
-  overflow: hidden;
-  border-radius: 10px;
-  transition: all 0.4s;
-}
-.movie_card:hover{
-    transform: scale(1.02);
-    transition: all 0.4s;
-  }
-  .info_section{
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-blend-mode: multiply;
-    z-index: 2;
-    border-radius: 10px;
-  }
-    .movie_header{
-      position: relative;
-      padding: 25px;
-      height: 40%;
-    }
-    .movie_header>h1{
-        color: #fff;
-        font-weight: 400;
-      }
-      .movie_header>h4{
-        color: #9ac7fa;
-        font-weight: 400;
-      }
-      .minutes{
-        display: inline-block;
-        margin-top: 10px;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        border: 1px solid rgba(255,255,255,0.13);
-      }
-      .type{
-        display: inline-block;
-        color: #cee4fd;
-        margin-left: 10px;
-      }
-      .locandina{
-        position: relative;
-        float: left;
-        margin-right: 20px;
-        height: 120px;
-        width: 80px;
-        box-shadow: 0 0 20px -10px rgba(0,0,0,0.5);
-      }
-    
-    .movie_desc{
-      padding: 25px;
-      height: 50%;
-    }
-    .text{
-      color: #cfd6e1;
-    }
-    .movie_social{
-      height: 10%;
-      padding-left: 15px;
-      padding-bottom: 20px;
-    }
-    .movie_social>ul{
-        list-style: none;
-        padding: 0;
-      }
-      .movie_social>li{
-          display: inline-block;
-          color: rgba(255,255,255,0.4);
-          transition: color 0.3s;
-          transition-delay: 0.15s;
-          margin: 0 10px;
-        }
-        .movie_social>li:hover{
-            transition: color 0.3s;
-            color: rgba(255,255,255,0.8);
-          }
-          .movie_social>i{
-            font-size: 19px;
-            cursor: pointer;
-          }
-    
-  
-  .blur_back{
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    height: 100%; right: 0;
-    background-size: cover;
-    border-radius: 11px;
-  }
-
-
-@media screen and (min-width: 768px) {
-  .movie_header{
-    width: 60%;
-  }
-  
-  .movie_desc{
-    width: 50%;
-  }
-  
-  .info_section{
-    background: linear-gradient(to right, #0d0d0c 50%, transparent 100%);
-  }
-  
-  .blur_back{
-    width: 80%;
-    background-position: -100% 10% !important;  
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .movie_card{
-    width: 95%;
-    margin: 70px auto; 
-    min-height: 350px;
-    height: auto;
-  }
-  
-  .blur_back{
-    width: 100%;
-    background-position: 50% 50% !important;  
-  }
-  
-  .movie_header{
-    width: 100%;
-    margin-top: 85px;
-  }
-  
-  .movie_desc{
-    width: 100%;
-  }
-  
-  .info_section{
-    background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
-    display: inline-grid;
-  }
-}
-
-
-#bright{
-  box-shadow: 0px 0px 150px -45px rgba(255, 51, 0, 0.5);
-}
-  #bright:hover{
-    box-shadow: 0px 0px 120px -55px rgba(255, 51, 0, 0.5);
-  }
-
-
-.bright_back{
-  background: url("https://fsmedia.imgix.net/cd/c9/5e/ba/4817/4d9a/93f0/c776ec32ecbc/lara-crofts-neck-looks-unnatural-in-the-new-poster-for-tomb-raider.png");
-} */
-

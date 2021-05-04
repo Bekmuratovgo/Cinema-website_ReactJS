@@ -15,13 +15,14 @@ import SignUp from "./components/SignUp/SignUp";
 import AuthContextProvider from "./context/AuthContext";
 
 
+
 const Routes = () => {
 
     return (
         
         <AuthContextProvider>
         <BrowserRouter>
-            <Navbar />     
+            <Navbar />  
             <Switch>
                 <Route exact path="/" component={Home}  />
                 <Route exact path="/admin" component={Admin}/>

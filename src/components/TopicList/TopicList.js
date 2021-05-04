@@ -7,7 +7,7 @@ import './TopicList.css'
 
 
 const TopicList = () => {
-    const { getTopics, topicsData, deleteTask } = useContext(topicContext)
+    const { getTopics, topicsData } = useContext(topicContext)
 
     useEffect(() =>{
         getTopics()

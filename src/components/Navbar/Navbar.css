@@ -146,3 +146,36 @@
         font-size: 2rem;
     }
 }
+
+/* SEARCH LIVE */
+.search-result{
+    /* width: 100%; */
+    position: absolute;
+    background-color: white;;
+    z-index: 10;
+    margin-left: 10px;
+ }
+ .search-item{
+    position: relative;
+ }
+ .search-result div{
+    border-bottom: 1px solid black;
+    margin-bottom: 5px;
+ }
+ .search-result a{
+    text-decoration: none;
+    color: black;
+ }
+
+ .nav-cart span{
+     position: absolute;
+     top: -15px;
+     right: -10px;
+     background: red;
+     font-size: 10px;
+     color: white;
+     padding: 3px 5px;
+     border-radius: 50%;
+     z-index: -1;
+
+ }
