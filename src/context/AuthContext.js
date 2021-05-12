@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import { AUTH_API } from "../components/helpers/constants";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import firebase from '../firebase'
 
 export const authContext = React.createContext();
 
@@ -24,16 +25,28 @@ const AuthContextProvider = ({ children }) => {
             email: e.target[0].value,
             password: e.target[2].value,
         };
-        try {
-            const res = await axios.post(
-                `${AUTH_API}/api/auth/register`,
-                newUser
-            );
-            console.log(res);
-            history.push("/login");
-        } catch (err) {
-            console.log(err.response);
-        }
+        // try {
+        //     const res = await axios.post(
+        //         `${AUTH_API}/api/auth/register`,
+        //         newUser
+        //     );
+        //     console.log(res);
+        //     history.push("/login");
+        // } catch (err) {
+        //     console.log(err.response);
+        // }
+        firebase.auth().createUserWithEmailAndPassword(newUser.email, newUser.password)
+            .then((userCredential) => {
+                // Signed in 
+                let user = userCredential.user;
+                history.push("/login");
+            })
+            .catch((error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+                // ..
+            });
+
     }
 
     async function loginUser(e, history) {
@@ -42,13 +55,24 @@ const AuthContextProvider = ({ children }) => {
             email: e.target[0].value,
             password: e.target[2].value,
         };
-        try {
-            const data = await axios.post(`${AUTH_API}/api/auth/login`, user);
-            console.log(data);
-            history.push("/");
-        } catch (err) {
-            console.log(err.response);
-        }
+        // try {
+        //     const data = await axios.post(`${AUTH_API}/api/auth/login`, user);
+        //     console.log(data);
+        //     history.push("/");
+        // } catch (err) {
+        //     console.log(err.response);
+        // }
+        firebase.auth().signInWithEmailAndPassword(user.email,user.password)
+            .then((userCredential) => {
+                // Signed in
+                let user = userCredential.user;
+                history.push("/admin");
+                // ...
+            })
+            .catch((error) => {
+                let errorCode = error.code;
+                let errorMessage = error.message;
+            });
     }
 
     let values = {

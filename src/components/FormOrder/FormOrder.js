@@ -254,14 +254,3 @@
 // };
 
 // export default FormOrder;
-import React from 'react';
-
-const FormOrder = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
-
-export default FormOrder;

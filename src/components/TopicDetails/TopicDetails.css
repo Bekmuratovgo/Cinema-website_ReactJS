@@ -1,15 +1,14 @@
 .wraper{
-    width: 100%;
-    display: flex;
+
     font-size: 20px;
  }
  h1{
     font-size: 50px;
  }
- .main-left{
-    width: 70%;
+ /* .main-left{
+    width: 40%;
     margin-left: 35px;
- }
+ } */
  .main-box{
     text-align: center;
  }
@@ -193,7 +192,7 @@ img {
 .movie_card{
   padding: 0 !important;
   width: 18rem;
-  height: 500px;
+  /* height: 500px; */
   margin:14px; 
   /* background: linear-gradient( 
     90deg
@@ -285,4 +284,10 @@ a{
 
 .trio{
   color: white;
+}
+
+@media all and (max-width: 610px) {
+  .details_btns {
+    width: 290px;
+  }
 }

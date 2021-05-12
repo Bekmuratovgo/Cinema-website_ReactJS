@@ -4,56 +4,38 @@ import './AnimationCard.css'
 const AnimationCard = () => {
     return (
         <>
-            {/* <header>
-                <div class="container">
-                    <nav>
-                    <ul class="nav-container">
-                        <li class="nav-item"><a href="#">HOME</a></li>
-                        <li class="nav-item has-subnav">
-                            <a href="#">MOVIES</a>
-                                <div class="subnav">
-                                <ul>
-                                <li>Live Stream</li>
-                                <li>3D</li>
-                                </ul>
-                                </div>
-                        </li>
-                        <li class="nav-item"><a href="#">CONTACT</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header> */}
+           
             <div class="accordion">
                 <ul>
                     <li>
                         <div class="image_title">
-                            <a href="#">Transformers: The Last Knight</a>
+                            <a href="#"> Дубай</a>
                         </div>
-                        <a href="https://ibb.co/gGv6QS"><img src="https://image.ibb.co/k7P0kS/transformers4_640x320.jpg" alt="transformers4_640x320" border="0"/></a>
+                        <a href="https://pixabay.com"><img src="https://cdn.pixabay.com/photo/2020/01/02/22/11/dubai-4736936__340.jpg" alt="dubai" border="0"/></a>
                     </li>
                     <li>
                         <div class="image_title">
-                            <a href="#">Blade Runner 2049</a>
+                            <a href="#">Мальдивы</a>
                         </div>
-                        <a href="https://ibb.co/cXjfKn"><img src="https://image.ibb.co/ct9rQS/Blade_Runner2049_640x320.jpg" alt="Blade_Runner2049_640x320" border="0"/></a>
+                        <a href="https://pixabay.com"><img src="https://cdn.pixabay.com/photo/2018/01/28/10/21/body-of-water-3113219__340.jpg" alt="maldivy" border="0"/></a>
                     </li>
                     <li>
                         <div class="image_title">
-                            <a href="#">Guardians of the Galaxy: Vol. 2</a>
+                            <a href="#">Кыргызстан , Ыссык-Куль</a>
                         </div>
-                        <a href="https://ibb.co/b4nLkS"><img src="https://image.ibb.co/jAu0kS/GOG2_640x320.jpg" alt="GOG2_640x320" border="0"/></a>
+                        <a href="https://pixabay.com"><img src="https://cdn.pixabay.com/photo/2019/08/24/17/40/clouds-4428025__340.jpg" alt="ik" border="0"/></a>
                     </li>
                     <li>
                         <div class="image_title">
-                            <a href="#">Spiderman: Homecoming</a>
+                            <a href="#">Стамбул</a>
                         </div>
-                        <a href="https://ibb.co/mC5Uen"><img src="https://image.ibb.co/da7xX7/spiderman_homecoming_640x320.jpg" alt="spiderman_homecoming_640x320" border="0"/></a>
+                        <a href="https://pixabay.com"><img src="https://www.tripzaza.com/ru/destinations/wp-content/uploads/2017/04/Turkey-10-Cappadocia-e1491888166680.jpg" alt="ik" border="0"/></a>
                     </li>
                     <li>
                         <div class="image_title">
-                            <a href="#">Wonder Woman</a>
+                            <a href="#">Гуанчжоу</a>
                         </div> 
-                        <a href="https://ibb.co/enV1s7"><img src="https://image.ibb.co/dHdAkS/Wonder_Woman_640x320.jpg" alt="Wonder_Woman_640x320" border="0"/></a>
+                        <a href="https://pixabay.com"><img src="https://cdn.pixabay.com/photo/2016/02/15/09/32/canton-tower-1200872__340.jpg" alt="ik" border="0"/></a>
                     </li>
                 </ul>
             </div>

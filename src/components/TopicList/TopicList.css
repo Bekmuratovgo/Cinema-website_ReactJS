@@ -1,18 +1,12 @@
-/* .list{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 40px;
-    grid-auto-rows: 200px;
-    margin-top: 50px;
-} */
-.list {
-    display: flex;
-    background: url("https://screenvisionmedia.com/wp-content/uploads/2015/09/movie-bg.jpg");
+.list{
+    background: url('https://s1.1zoom.ru/big0/210/Germany_Houses_Marinas_Lighthouses_Monuments_593298_1280x700.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flow-root;
-    /* margin: -44px; */
-    /* margin-top: -44px;
-    padding-top: 40px; */
     padding-bottom: 40px;
+
+}
+.list-div{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;

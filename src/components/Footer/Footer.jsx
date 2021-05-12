@@ -1,11 +1,13 @@
-import React from "react";
-import "./Footer.css";
-import { Link } from "react-router-dom";
+import React from 'react';
+import './Footer.css';
+import {Link} from 'react-router-dom';
+
+
 
 const Footer = () => {
     return (
-        <>
-            {/* <footer class="container-fluid bg-grey py-5">
+    <>
+        {/* <footer class="container-fluid bg-grey py-5">
         <div class="container">
            <div class="row">
               <div class="col-md-6">
@@ -70,112 +72,110 @@ const Footer = () => {
         </div>
         </footer> */}
 
-            <div className="footer-container">
-                <section className="footer-subscription">
-                    <p className="footer-subscription-heading">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Obcaecati, nobis.
-                    </p>
-                    <p className="footer-subscription-text">
-                        Lorem ipsum dolor sit amet.
-                    </p>
-                    <div className="input-areas">
-                        <form>
-                            {/* IT IS COMMENT    <input type="email" name="email" placeholder="Your Email" className="footer-input"/>
-                    IT IS COMMENT    <Button buttonStyle="btn--outline">Subscribe</Button> */}
-                        </form>
+        <div className="footer-container">
+            <div className="footer-links d-flex flex-wrap">
+                <div className="footer-link-wrapper">
+                    <div className="footer-link-items">
+                        <h2 className="information">Информация</h2>
+                        <Link to="/">Главная</Link>
+                        <Link to="/" >Туры</Link>
+                        <Link to="/sale" >Акции</Link>
+                        <Link to="/contacts">Контакты</Link>
                     </div>
-                </section>
-                <div className="footer-links">
-                    <div className="footer-link-wrapper">
-                        <div className="footer-link-items">
-                            <h2>Custom Services</h2>
-                            <Link to=".sign-up">Lorem ipsum</Link>
-                            <Link to="/">Lorem ipsum</Link>
-                            <Link to="/">Lorem ipsum</Link>
-                        </div>
-                        <div className="footer-link-items">
-                            <h2>Social Media</h2>
-                            <Link to="/">Instagram</Link>
-                            <Link to="/">Facebook</Link>
-                            <Link to="/">Youtube</Link>
-                            <Link to="/">Twitter</Link>
-                        </div>
-                    </div>
-                    <div className="footer-link-wrapper">
-                        <div className="footer-link-items">
-                            <h2>Feedbacks</h2>
-                            <Link to=".sign-up">Lorem ipsum</Link>
-                            <Link to="/">Lorem ipsum</Link>
-                            <Link to="/">Lorem ipsum</Link>
-                            <Link to="/">Lorem ipsum</Link>
-                        </div>
-                        <div className="footer-link-items">
-                            <h2>Contact Us</h2>
-                            <Link to="/">
-                                <i className="fas fa-map-marker-alt">
-                                    {" "}
-                                    Switzerland 87{" "}
-                                </i>
-                            </Link>
-                            <Link to="/">
-                                <i className="far fa-envelope"></i>{" "}
-                                movie@movie.com{" "}
-                            </Link>
-                            <Link to="/">
-                                <i className="fas fa-phone"></i> 0 555 555 777
-                            </Link>
-                            {/* IT IS COMMENT <Link to="/" >Sponsorships</Link> */}
-                        </div>
+                    <div className="footer-link-items">
+                        <h2>Контакты</h2>
+                        <Link to="/">+996 (551) 68-00-68</Link>
+                        <Link to="/" >+996 (771) 68-00-68</Link>
+                        <Link to="/" >+996 (501) 68-00-68</Link>
+                        <Link to="/" >Адрес:</Link>
+                        <Link to="/" >ул. Киевская 93, Напротив "Военторга"</Link>
+                        <Link to="/" >E-mail</Link>
+                        <Link to="/" >info@putevka.kg</Link>
                     </div>
                 </div>
-                <section className="social-media">
-                    <div className="social-media-wrap">
-                        <div className="footer-logo">
-                            <Link to="/" className="social-logo">
-                                M<i className="fas fa-compact-disc"></i>
-                                VIE
-                            </Link>
-                        </div>
-                        <small className="website-rights"></small>
-                        <div className="social-icons">
-                            <Link
-                                className="social-icon-link instagram"
-                                to="/"
-                                target="_blank"
-                                aria-label="Instagram"
-                            >
-                                <i className="fab fa-instagram"></i>
-                            </Link>
-                            <Link
-                                className="social-icon-link facebok"
-                                to="/"
-                                target="_blank"
-                                aria-label="Facebook"
-                            >
-                                <i className="fab fa-facebook-f"></i>
-                            </Link>
-                            <Link
-                                className="social-icon-link youtube"
-                                to="/"
-                                target="_blank"
-                                aria-label="Youtube"
-                            >
-                                <i className="fab fa-youtube"></i>
-                            </Link>
-                            <Link
-                                className="social-icon-link twitter"
-                                to="/"
-                                target="_blank"
-                                aria-label="Twitter"
-                            >
-                                <i className="fab fa-twitter"></i>
-                            </Link>
-                        </div>
+                <div className="footer-link-wrapper">
+                    <div className="footer-link-items">
+                        <h2>Мы в соц.сетях</h2>
+                        <Link className="social-icon-link instagram"
+                        to="/"
+                        target="_blank"
+                        aria-label="Instagram"
+                        >
+                            <i className="fab fa-instagram">  enjoy.kg</i>
+                        </Link>
+                        <Link className="social-icon-link facebok"
+                        to="/"
+                        target="_blank"
+                        aria-label="Facebook"
+                        >
+                            <i className="fab fa-facebook-f">   enjoy.kg</i>
+                        </Link> 
+                        <Link className="social-icon-link youtube"
+                        to="/"
+                        target="_blank"
+                        aria-label="Youtube"
+                        >
+                            <i className="fab fa-youtube">  Kaifarik Kyrgyz</i>
+                        </Link>
+                        <Link className="social-icon-link twitter"
+                        to="/"
+                        target="_blank"
+                        aria-label="Twitter"
+                        >
+                            <i className="fab fa-twitter"> enjoy.kg</i>
+                        </Link>
                     </div>
-                </section>
+                    <div className="footer-link-items">
+                        <h2>Мы находимся</h2>
+                        <Link to="/"><i className="fas fa-map-marker-alt"> Panfilova 55 </i></Link>
+                        <Link to="/" ><i className="far fa-envelope"></i> enjoy@gmail.com </Link>
+                        <Link to="/" ><i className="fas fa-phone"></i> 0312 14-24-56</Link>
+                        {/* IT IS COMMENT <Link to="/" >Sponsorships</Link> */}
+                    </div>
+                </div>
             </div>
-        </>
+            <section className="social-media">
+                <div className="social-media-wrap">
+                    <div className="footer-logo">
+                        <Link to="/" className="social-logo">
+                       ENJOY.KG
+                        </Link>
+                    </div>
+                    <small className="website-rights"></small>
+                    <div className="social-icons">
+                        <Link className="social-icon-link instagram"
+                        to="/"
+                        target="_blank"
+                        aria-label="Instagram"
+                        >
+                            <i className="fab fa-instagram"></i>
+                        </Link>
+                        <Link className="social-icon-link facebok"
+                        to="/"
+                        target="_blank"
+                        aria-label="Facebook"
+                        >
+                            <i className="fab fa-facebook-f"></i>
+                        </Link>
+                        <Link className="social-icon-link youtube"
+                        to="/"
+                        target="_blank"
+                        aria-label="Youtube"
+                        >
+                            <i className="fab fa-youtube"></i>
+                        </Link>
+                        <Link className="social-icon-link twitter"
+                        to="/"
+                        target="_blank"
+                        aria-label="Twitter"
+                        >
+                            <i className="fab fa-twitter"></i>
+                        </Link>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </>
     );
 };
 

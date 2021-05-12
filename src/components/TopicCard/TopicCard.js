@@ -3,38 +3,43 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { topicContext } from '../../context/TopicContext';
 import './TopicCard.css'
-import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Truncate from 'react-truncate';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 
 const TopicCard = (props) => {
-    const {addProductToCard, checkProductInCart} = useContext(topicContext)
+    const { addProductToCard, checkProductInCart } = useContext(topicContext)
     return (
         <div class="card movie_card">
-            <div style={{position: 'relative'}} >
-                    <img src={props.item.img} class="card-img-top" alt="..."/>
-                    <div style={{position: 'absolute', top: '10px'}} class="movie_info">
-                        
-                        <button  onClick={() => addProductToCard(props.item)} 
-                            color={checkProductInCart(props.item.id) ? "secondary" : "primary"}>
-                                <i class="fas fa-shopping-cart"/>
-                            </button>
-                    </div>
-                </div>
-            <Link to={`/details/${props.item.id}`}>
-                
-                <div class="card-body">
-                    <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
-                    </i>
+            <div style={{ position: 'relative' }} >
+                <img src={props.item.img} class="card-img-top" alt="..." />
+            </div>
+
+            <div class="card-body" >
+                {/* <i class="fas fa-play play_button" data-toggle="tooltip" data-placement="bottom" title="Play Trailer">
+                    </i> */}
+                <Link to={`/details/${props.item.id}`}>
                     <h1 class="card-title">{props.item.title}</h1>
-                    <p className="card-desc" style={{fontSize:"18px"}}>{props.item.description}</p>
-                    <Typography variant="h6" style={{color: "black"}}>
-                        {props.item.price} сом
+                    <p className="card-desc" style={{ fontSize: "18px" }}>
+                        <Truncate lines={2} ellipsis={<span>...</span>}>
+                            {props.item.description}
+                        </Truncate>
+                    </p>
+                    <Typography variant="h6" style={{ color: "black" }}>
+                        {props.item.price}сом
                     </Typography>
-                    {/* <span class="movie_info">2019</span> */}
-                    <span class="movie_info" style={{float:"right"}}><i class="fas fa-star"></i> 9 / 10</span>
-                    
+                   
+                </Link>
+                <div class="tour_info" style={{ padding: "10px 0" }}>
+
+                    <button onClick={() => addProductToCard(props.item)}
+                        color={checkProductInCart(props.item.id) ? "secondary" : "primary"}>
+                        <BookmarkBorderIcon/>
+                    </button>
+                    <span class="tour_info" style={{ float: "right" }}><i class="fas fa-star"></i> 1 / 5</span>
                 </div>
-            </Link>
+
+            </div>
         </div>
     );
 };
